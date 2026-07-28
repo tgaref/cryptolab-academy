@@ -1388,6 +1388,13 @@ function unlockMission(num) {
         stampEl.classList.add('unlocked');
     }
 
+    // Update all buttons for this mission across the app
+    document.querySelectorAll(`[data-mission="${num}"]`).forEach(btn => {
+        btn.textContent = 'Ολοκληρώθηκε ✓';
+        btn.style.background = 'rgba(0, 230, 118, 0.2)';
+        btn.style.color = '#fff';
+    });
+
     const countEl = document.getElementById('hub-completed-count');
     const barEl = document.getElementById('hub-progress-bar');
     const levelEl = document.getElementById('hub-agent-level');
@@ -1417,12 +1424,10 @@ function initSpyChallenge() {
         });
     }
 
-    document.querySelectorAll('.btn-micro[data-mission]').forEach(btn => {
+    document.querySelectorAll('[data-mission]').forEach(btn => {
         btn.addEventListener('click', () => {
             const mNum = parseInt(btn.dataset.mission, 10);
             unlockMission(mNum);
-            btn.textContent = 'Ολοκληρώθηκε ✓';
-            btn.style.background = 'rgba(0, 230, 118, 0.2)';
             playSound(750, 0.1);
         });
     });
@@ -1546,12 +1551,7 @@ function initSpyChallenge() {
                 const mNum = parseInt(m, 10);
                 if (!isNaN(mNum)) {
                     unlockMission(mNum);
-                    // Update complete buttons visually
-                    const btn = document.querySelector(`.btn-micro[data-mission="${mNum}"]`);
-                    if (btn) {
-                        btn.textContent = 'Ολοκληρώθηκε ✓';
-                        btn.style.background = 'rgba(0, 230, 118, 0.2)';
-                    }
+
                 }
             });
         }
@@ -1569,6 +1569,18 @@ function initSpyChallenge() {
             for (let i = 1; i <= 6; i++) {
                 const s = document.getElementById(`stamp-${i}`);
                 if (s) { s.textContent = '🔒'; s.classList.remove('unlocked'); }
+                // Reset all button styles
+                document.querySelectorAll(`[data-mission="${i}"]`).forEach(btn => {
+                    if (btn.classList.contains('btn-micro')) {
+                        btn.textContent = 'Ολοκλήρωση ✓';
+                        btn.style.background = '';
+                        btn.style.color = '';
+                    } else {
+                        btn.textContent = `📥 Λήψη Σφραγίδας Αποστολής ${i}`;
+                        btn.style.background = '';
+                        btn.style.color = '';
+                    }
+                });
             }
             if (document.getElementById('hub-completed-count')) document.getElementById('hub-completed-count').textContent = '0';
             if (document.getElementById('hub-progress-bar')) document.getElementById('hub-progress-bar').style.width = '0%';
