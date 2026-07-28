@@ -540,7 +540,7 @@ function initParityMagic() {
     computeBtn.addEventListener('click', computeParityBits);
     if (flipRandomBtn) flipRandomBtn.addEventListener('click', flipRandomTile);
     scanBtn.addEventListener('click', showComputerAnswer);
-    resetBtn.addEventListener('click', generateRandom5x5);
+    if (resetBtn) resetBtn.addEventListener('click', generateRandom5x5);
 
     generateRandom5x5();
 }
@@ -1406,6 +1406,10 @@ function unlockMission(num) {
         levelEl.textContent = 'MASTER CRYPTOGRAPHER 🏆';
         levelEl.style.color = 'var(--accent-gold)';
     }
+    const unlockCodeDisplay = document.getElementById('hub-unlock-code-display');
+    if (completedMissions.size === 6 && unlockCodeDisplay) {
+        unlockCodeDisplay.innerHTML = '🔑 <span style="letter-spacing:1px; font-weight:800; color:var(--accent-gold);">CRYPTO2026</span>';
+    }
 }
 
 function initSpyChallenge() {
@@ -1561,6 +1565,14 @@ function initSpyChallenge() {
             const spyTabBtn = document.querySelector('.nav-btn[data-tab="spy-challenge"]');
             if (spyTabBtn) spyTabBtn.click();
         }, 500);
+        
+        // Show unlock code if all 6 loaded via URL
+        if (completedMissions.size === 6) {
+            const unlockCodeDisplay = document.getElementById('hub-unlock-code-display');
+            if (unlockCodeDisplay) {
+                unlockCodeDisplay.innerHTML = '🔑 <span style="letter-spacing:1px; font-weight:800; color:var(--accent-gold);">CRYPTO2026</span>';
+            }
+        }
     }
 
     if (resetProgressBtn) {
@@ -1584,6 +1596,11 @@ function initSpyChallenge() {
             }
             if (document.getElementById('hub-completed-count')) document.getElementById('hub-completed-count').textContent = '0';
             if (document.getElementById('hub-progress-bar')) document.getElementById('hub-progress-bar').style.width = '0%';
+            const unlockCodeDisplay = document.getElementById('hub-unlock-code-display');
+            if (unlockCodeDisplay) {
+                unlockCodeDisplay.textContent = '🔒 Κλειδωμένο (Ολοκληρώστε 6/6 αποστολές)';
+                unlockCodeDisplay.style.color = '';
+            }
             alert('Η πρόοδος μηδενίστηκε.');
         });
     }

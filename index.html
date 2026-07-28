@@ -63,6 +63,10 @@
                                 <div class="progress-bar" id="hub-progress-bar" style="width: 0%;"></div>
                             </div>
                             <small><span id="hub-completed-count">0</span> / 6 Αποστολές Ολοκληρώθηκαν</small>
+                            <div class="hub-unlock-code-box" style="margin-top: 8px; font-size: 0.85rem; padding: 6px 10px; background: rgba(0,0,0,0.3); border-radius: 4px; border: 1px dashed rgba(255,255,255,0.15);">
+                                <span>Κωδικός Πιστοποιητικού: </span>
+                                <strong id="hub-unlock-code-display" style="color: var(--text-dim, #94a3b8);">🔒 Κλειδωμένο (Ολοκληρώστε 6/6 αποστολές)</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -155,6 +159,7 @@
                         <button id="vc-animate-btn" class="btn btn-primary">▶️ Αυτόματη Ευθυγράμμιση</button>
                         <button id="vc-download-btn" class="btn btn-secondary">📥 Λήψη Εκτυπώσιμων PNGs (A & B)</button>
                     </div>
+                    <button id="vc-complete-btn" class="btn btn-accent full-width margin-top" data-mission="1" style="background: var(--accent-gold); color: #000; font-weight: bold;">📥 Λήψη Σφραγίδας Αποστολής 1</button>
 
                     <div class="info-box">
                         💡 <strong>Πώς δουλεύει στο Stand:</strong> Εκτυπώνουμε το <em>Share A</em> και το <em>Share B</em> σε διάφανες μεμβράνες (overheads). Τα παιδιά κρατούν τη μία μεμβράνη πάνω στην άλλη μπροστά από ένα φως!
@@ -206,7 +211,7 @@
                         <button id="parity-compute-btn" class="btn btn-primary">➕ 2. Προσθήκη Parity (6x6)</button>
                         <button id="parity-flip-random-btn" class="btn btn-accent">🔀 3. Αλλαγή 1 Τυχαίου Πλακιδίου</button>
                         <button id="parity-scan-btn" class="btn btn-secondary">🔍 Αποκάλυψη από Υπολογιστή (Hint)</button>
-                        <button id="parity-reset-btn" class="btn btn-outline">🔄 Επανεκκίνηση</button>
+                        <button id="parity-complete-btn" class="btn btn-accent full-width margin-top" data-mission="2" style="background: var(--accent-gold); color: #000; font-weight: bold;">📥 Λήψη Σφραγίδας Αποστολής 2</button>
                     </div>
 
                     <div class="info-box">
@@ -359,6 +364,7 @@
                         <button id="caesar-copy-btn" class="btn btn-secondary">📋 Αντιγραφή Ciphertext</button>
                         <button id="caesar-solve-btn" class="btn btn-accent">⚡ Αυτόματο Σπάσιμο (Auto-Crack)</button>
                     </div>
+                    <button id="caesar-complete-btn" class="btn btn-accent full-width margin-top" data-mission="4" style="background: var(--accent-gold); color: #000; font-weight: bold;">📥 Λήψη Σφραγίδας Αποστολής 4</button>
                     <div id="caesar-feedback" class="feedback-banner success margin-top" style="display:none;"></div>
                 </div>
 
@@ -495,6 +501,7 @@
                     </div>
 
                     <button id="hamming-repair-btn" class="btn btn-accent">🛠️ Αυτόματη Διάγνωση & Διόρθωση</button>
+                    <button id="hamming-complete-btn" class="btn btn-accent full-width margin-top" data-mission="6" style="background: var(--accent-gold); color: #000; font-weight: bold;">📥 Λήψη Σφραγίδας Αποστολής 6</button>
                 </div>
 
                 <div class="panel display-panel">
@@ -566,7 +573,6 @@
                                 <div class="mission-info">
                                     <h5>Αποστολή 1: Οπτικό Μυστικό</h5>
                                     <p>Ευθυγραμμίστε τις διαφάνειες στο Demo 1</p>
-                                    <button class="btn btn-micro" data-mission="1">Ολοκλήρωση ✓</button>
                                 </div>
                             </div>
 
@@ -575,7 +581,6 @@
                                 <div class="mission-info">
                                     <h5>Αποστολή 2: Parity Master</h5>
                                     <p>Βρείτε το αλλαγμένο bit στο Demo 2</p>
-                                    <button class="btn btn-micro" data-mission="2">Ολοκλήρωση ✓</button>
                                 </div>
                             </div>
 
@@ -584,7 +589,6 @@
                                 <div class="mission-info">
                                     <h5>Αποστολή 3: Diffie-Hellman</h5>
                                     <p>Ανταλλάξτε μυστικά χρώματα στο Demo 3</p>
-                                    <button class="btn btn-micro" data-mission="3">Ολοκλήρωση ✓</button>
                                 </div>
                             </div>
 
@@ -593,7 +597,6 @@
                                 <div class="mission-info">
                                     <h5>Αποστολή 4: Caesar Shift</h5>
                                     <p>Αποκρυπτογραφήστε το κείμενο στο Demo 4</p>
-                                    <button class="btn btn-micro" data-mission="4">Ολοκλήρωση ✓</button>
                                 </div>
                             </div>
 
@@ -602,7 +605,6 @@
                                 <div class="mission-info">
                                     <h5>Αποστολή 5: Διαρροή ECB</h5>
                                     <p>Αποκαλύψτε την κρυμμένη εικόνα στο Demo 5</p>
-                                    <button class="btn btn-micro" data-mission="5">Ολοκλήρωση ✓</button>
                                 </div>
                             </div>
 
@@ -611,7 +613,6 @@
                                 <div class="mission-info">
                                     <h5>Αποστολή 6: Hamming Repair</h5>
                                     <p>Διορθώστε το ψηφιακό σφάλμα στο Demo 6</p>
-                                    <button class="btn btn-micro" data-mission="6">Ολοκλήρωση ✓</button>
                                 </div>
                             </div>
                         </div>
