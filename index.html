@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoLab - Βραδιά Ερευνητή / Open Day</title>
+    <meta name="description" content="Διαδραστικές δραστηριότητες Κρυπτογραφίας και Θεωρίας Κωδίκων - CryptoLab Open Day">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Outfit:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Top Header / Navigation -->
+    <header class="app-header">
+        <div class="logo-container">
+            <div class="shield-icon">🔐</div>
+            <div class="title-group">
+                <h1><span class="highlight">CryptoLab</span></h1>
+                <p class="subtitle">Διαδραστικός Σταθμός Κρυπτογραφίας & Θεωρίας Κωδίκων | Βραδιά Ερευνητή</p>
+            </div>
+        </div>
+        <nav class="nav-tabs" id="main-nav">
+            <button class="nav-btn active" data-tab="hub"><span class="icon">🧭</span> Αρχική</button>
+            <button class="nav-btn" data-tab="visual-crypto"><span class="icon">👁️</span> Οπτική Κρυπτογραφία</button>
+            <button class="nav-btn" data-tab="parity-magic"><span class="icon">✨</span> Το Κόλπο Parity</button>
+            <button class="nav-btn" data-tab="diffie-hellman"><span class="icon">🎨</span> Diffie-Hellman</button>
+            <button class="nav-btn" data-tab="cipher-wheel"><span class="icon">⚙️</span> Τροχός Caesar</button>
+            <button class="nav-btn" data-tab="ecb-demo"><span class="icon">🖼️</span> Διαρροή ECB</button>
+            <button class="nav-btn" data-tab="error-correction"><span class="icon">🛡️</span> Διόρθωση Σφαλμάτων</button>
+            <button class="nav-btn" data-tab="spy-challenge"><span class="icon">🕵️</span> Spy Passport</button>
+        </nav>
+    </header>
+
+    <!-- Main Content Containers -->
+    <main class="main-content">
+
+        <!-- TAB 0: DASHBOARD HUB -->
+        <section id="tab-hub" class="tab-page active">
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <h2>Καλώς ήρθατε στο CryptoLab! 👋</h2>
+                    <p>Ανακαλύψτε τα μυστικά των κρυφών μηνυμάτων, των ψηφιακών κλειδιών και της διόρθωσης σφαλμάτων μέσα από διαδραστικά παιχνίδια και πειράματα!</p>
+                    <div class="hero-tags">
+                        <span class="tag">#CryptoLab</span>
+                        <span class="tag">#ΒραδιάΕρευνητή</span>
+                        <span class="tag">#Cryptography</span>
+                        <span class="tag">#CodingTheory</span>
+                    </div>
+                </div>
+                <div class="spy-card-preview">
+                    <div class="badge-header">
+                        <span>SECRET AGENT ID</span>
+                        <span class="badge-status online">● ACTIVE</span>
+                    </div>
+                    <div class="badge-body">
+                        <div class="avatar-placeholder">🕵️‍♂️</div>
+                        <div class="badge-info">
+                            <h4 id="hub-agent-name">Πράκτορας Crypto</h4>
+                            <p>Επίπεδο: <span id="hub-agent-level">Δοκιμαζόμενος</span></p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" id="hub-progress-bar" style="width: 0%;"></div>
+                            </div>
+                            <small><span id="hub-completed-count">0</span> / 6 Αποστολές Ολοκληρώθηκαν</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-dashboard">
+                <div class="card demo-card" data-target="visual-crypto">
+                    <div class="card-icon">👁️</div>
+                    <h3>1. Οπτική Κρυπτογραφία</h3>
+                    <p>Αποκρυπτογράφηση χωρίς υπολογιστή! Ενώστε δύο φαινομενικά "τυχαίες" διαφάνειες για να αποκαλύψετε το μυστικό σήμα.</p>
+                    <button class="btn btn-secondary">Έναρξη Demo →</button>
+                </div>
+
+                <div class="card demo-card" data-target="parity-magic">
+                    <div class="card-icon">✨</div>
+                    <h3>2. Το "Μαγικό" Κόλπο Parity</h3>
+                    <p>Διάβασμα σκέψης ή μαθηματικά; Αλλάξτε ένα πλακίδιο στο πλέγμα και ο υπολογιστής θα βρει αμέσως ποιο αλλάξατε!</p>
+                    <button class="btn btn-secondary">Έναρξη Demo →</button>
+                </div>
+
+                <div class="card demo-card" data-target="diffie-hellman">
+                    <div class="card-icon">🎨</div>
+                    <h3>3. Ανταλλαγή Χρωμάτων Diffie-Hellman</h3>
+                    <p>Πώς δύο άνθρωποι δημιουργούν ένα κοινό μυστικό κλειδί μέσω δημόσιου καναλιού, αναμιγνύοντας χρώματα και αριθμούς.</p>
+                    <button class="btn btn-secondary">Έναρξη Demo →</button>
+                </div>
+
+                <div class="card demo-card" data-target="cipher-wheel">
+                    <div class="card-icon">⚙️</div>
+                    <h3>4. Τροχός Caesar & Ανάλυση Συχνότητας</h3>
+                    <p>Περιστρέψτε τον ρωμαϊκό τροχό κρυπτογράφησης και σπάστε μηνύματα με ιστογράμματα συχνότητας γραμμάτων.</p>
+                    <button class="btn btn-secondary">Έναρξη Demo →</button>
+                </div>
+
+                <div class="card demo-card" data-target="ecb-demo">
+                    <div class="card-icon">🖼️</div>
+                    <h3>5. Οπτική Διαρροή ECB (Logo)</h3>
+                    <p>Γιατί η επαναχρησιμοποίηση κλειδιού είναι επικίνδυνη; Δείτε πώς η κρυπτογράφηση ECB αφήνει τα περιγράμματα ορατά.</p>
+                    <button class="btn btn-secondary">Έναρξη Demo →</button>
+                </div>
+
+                <div class="card demo-card" data-target="error-correction">
+                    <div class="card-icon">🛡️</div>
+                    <h3>6. Διόρθωση Σφαλμάτων (Hamming / QR)</h3>
+                    <p>Πώς τα QR codes και τα CD επιβιώνουν από γρατζουνιές; Χαράξτε ψηφιακά ένα σφάλμα και δείτε το να διορθώνεται αυτόματα!</p>
+                    <button class="btn btn-secondary">Έναρξη Demo →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 1: VISUAL CRYPTOGRAPHY -->
+        <section id="tab-visual-crypto" class="tab-page">
+            <div class="page-header">
+                <h2>👁️ 1. Οπτική Κρυπτογραφία (Visual Secret Sharing)</h2>
+                <p>Διαχωρισμός εικόνας σε 2 τυχαίες διαφάνειες (Shares). Μόνο όταν τοποθετηθούν η μία πάνω στην άλλη (XOR/OR overlay) εμφανίζεται το μυστικό!</p>
+            </div>
+            
+            <div class="content-split">
+                <div class="panel controls-panel">
+                    <h3>⚙️ Ρυθμίσεις & Δημιουργία</h3>
+                    <div class="form-group">
+                        <label for="vc-preset-select">Επιλογή Έτοιμου Σχεδίου:</label>
+                        <select id="vc-preset-select" class="form-control">
+                            <option value="cryptolab">CryptoLab Logo 🔑</option>
+                            <option value="key">Μυστικό Κλειδί 🗝️</option>
+                            <option value="spy">Σήμα Κατασκόπου 🕵️</option>
+                            <option value="star">Αστέρι Ερευνητή ⭐</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vc-text-input">Ή Γράψτε Μυστικό Κείμενο:</label>
+                        <input type="text" id="vc-text-input" class="form-control" placeholder="π.χ. FORTH 2026" maxlength="12">
+                        <button id="vc-generate-text-btn" class="btn btn-small">Δημιουργία από Κείμενο</button>
+                    </div>
+
+                    <hr class="divider">
+
+                    <h3>🎛️ Διαδραστική Επικάλυψη (Overlay)</h3>
+                    <div class="form-group">
+                        <label for="vc-overlay-slider">Μετατόπιση Διαφάνειας B:</label>
+                        <input type="range" id="vc-overlay-slider" min="0" max="100" value="0" class="slider">
+                        <div class="range-labels">
+                            <span>Ξεχωριστά (Θόρυβος)</span>
+                            <span>Πλήρης Ευθυγράμμιση (Μυστικό!)</span>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button id="vc-animate-btn" class="btn btn-primary">▶️ Αυτόματη Ευθυγράμμιση</button>
+                        <button id="vc-download-btn" class="btn btn-secondary">📥 Λήψη Εκτυπώσιμων PNGs (A & B)</button>
+                    </div>
+
+                    <div class="info-box">
+                        💡 <strong>Πώς δουλεύει στο Stand:</strong> Εκτυπώνουμε το <em>Share A</em> και το <em>Share B</em> σε διάφανες μεμβράνες (overheads). Τα παιδιά κρατούν τη μία μεμβράνη πάνω στην άλλη μπροστά από ένα φως!
+                    </div>
+                </div>
+
+                <div class="panel display-panel">
+                    <div class="vc-canvas-container">
+                        <div class="canvas-wrapper">
+                            <h4>Διαφάνεια A (Share A)</h4>
+                            <canvas id="vc-canvas-a" width="220" height="220"></canvas>
+                        </div>
+                        <div class="canvas-wrapper">
+                            <h4>Διαφάνεια B (Share B)</h4>
+                            <canvas id="vc-canvas-b" width="220" height="220"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="canvas-wrapper overlay-wrapper">
+                        <h4>Αποτέλεσμα Επικάλυψης (Combined Visual Overlay)</h4>
+                        <div class="overlay-stage">
+                            <canvas id="vc-canvas-overlay" width="260" height="260"></canvas>
+                        </div>
+                        <p class="status-text" id="vc-status-text">👉 Σύρετε το ρυθμιστικό για να ευθυγραμμίσετε τις διαφάνειες!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: PARITY BIT MAGIC TRICK -->
+        <section id="tab-parity-magic" class="tab-page">
+            <div class="page-header">
+                <h2>✨ 2. Το "Μαγικό" Κόλπο Parity (Error Detection)</h2>
+                <p>Ο υπολογιστής (ή ο παρουσιαστής) βρίσκει αμέσως ποιο πλακίδιο άλλαξε ο επισκέπτης, χρησιμοποιώντας ψηφία ισοτιμίας (parity bits)!</p>
+            </div>
+
+            <div class="content-split">
+                <div class="panel controls-panel">
+                    <h3>🎮 Οδηγίες & Λειτουργία Παιχνιδιού</h3>
+                    <ol class="step-list">
+                        <li><strong>Βήμα 1:</strong> Πατήστε <em>"1. Τυχαίο 5x5"</em>.</li>
+                        <li><strong>Βήμα 2:</strong> Πατήστε <em>"2. Προσθήκη Parity"</em> για να γίνει κάθε γραμμή & στήλη <strong>άρτια (even)</strong>.</li>
+                        <li><strong>Βήμα 3:</strong> Πατήστε <em>"3. Αλλαγή 1 Πλακιδίου"</em> (ή κάντε κλικ σε ένα πλακίδιο).</li>
+                        <li><strong>Βήμα 4: 🕵️ Γίνετε ο Ντετέκτιβ!</strong> Μετρήστε τα κόκκινα πλακίδια σε κάθε γραμμή/στήλη και κάντε κλικ στο κουτάκι που πιστεύετε ότι άλλαξε!</li>
+                    </ol>
+
+                    <div class="btn-group vertical">
+                        <button id="parity-randomize-btn" class="btn btn-secondary">🎲 1. Τυχαίο Πλέγμα (5x5)</button>
+                        <button id="parity-compute-btn" class="btn btn-primary">➕ 2. Προσθήκη Parity (6x6)</button>
+                        <button id="parity-flip-random-btn" class="btn btn-accent">🔀 3. Αλλαγή 1 Τυχαίου Πλακιδίου</button>
+                        <button id="parity-scan-btn" class="btn btn-secondary">🔍 Αποκάλυψη από Υπολογιστή (Hint)</button>
+                        <button id="parity-reset-btn" class="btn btn-outline">🔄 Επανεκκίνηση</button>
+                    </div>
+
+                    <div class="info-box">
+                        🧠 <strong>Πώς το λύνουμε:</strong> Βρίσκουμε τη γραμμή και τη στήλη που έχουν <strong>περιττό (odd)</strong> αριθμό κόκκινων. Το σημείο τομής τους είναι το αλλαγμένο πλακίδιο!
+                    </div>
+                </div>
+
+                <div class="panel display-panel">
+                    <div class="parity-grid-wrapper">
+                        <div id="parity-board" class="parity-board grid-6x6">
+                            <!-- Dynamic 6x6 grid cells rendered via JS -->
+                        </div>
+                    </div>
+                    <div id="parity-feedback" class="feedback-banner info">
+                        Πιέστε "1. Τυχαίο Πλέγμα" για να ξεκινήσετε το πείραμα.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: DIFFIE-HELLMAN COLOR MIXING -->
+        <section id="tab-diffie-hellman" class="tab-page">
+            <div class="page-header">
+                <h2>🎨 3. Ανταλλαγή Κλειδιών Diffie-Hellman</h2>
+                <p>Πώς η Alice και ο Bob συμφωνούν σε ένα μυστικό κλειδί μέσω δημόσιου καναλιού, χωρίς η Eve να μπορεί να το ανακαλύψει!</p>
+            </div>
+
+            <div class="content-split">
+                <div class="panel controls-panel">
+                    <h3>🧪 Επιλογή Μυστικών Χρωμάτων</h3>
+                    <p>Δημόσιο Χρώμα (Κοινό σε όλους, και στην Eve): <strong style="color: #f1c40f;">Κίτρινο 🟡</strong></p>
+                    
+                    <div class="form-group">
+                        <label for="dh-alice-color">Μυστικό Χρώμα Alice (Private Key):</label>
+                        <input type="color" id="dh-alice-color" value="#e74c3c" class="color-picker">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dh-bob-color">Μυστικό Χρώμα Bob (Private Key):</label>
+                        <input type="color" id="dh-bob-color" value="#3498db" class="color-picker">
+                    </div>
+
+                    <hr class="divider">
+
+                    <h3>🔢 Ή Δοκιμάστε με Αριθμούς (Modular Math)</h3>
+                    <div class="math-inputs">
+                        <div class="form-group">
+                            <label>Πρώτος Αριθμός p:</label>
+                            <input type="number" id="dh-p" value="23" class="form-control small">
+                        </div>
+                        <div class="form-group">
+                            <label>Βάση g:</label>
+                            <input type="number" id="dh-g" value="5" class="form-control small">
+                        </div>
+                        <div class="form-group">
+                            <label>Private a (Alice):</label>
+                            <input type="number" id="dh-a" value="6" class="form-control small">
+                        </div>
+                        <div class="form-group">
+                            <label>Private b (Bob):</label>
+                            <input type="number" id="dh-b" value="15" class="form-control small">
+                        </div>
+                    </div>
+
+                    <button id="dh-simulate-btn" class="btn btn-primary">🚀 Εκτέλεση Προσομοίωσης</button>
+                </div>
+
+                <div class="panel display-panel">
+                    <div class="dh-diagram">
+                        <!-- Alice Side -->
+                        <div class="actor-card alice">
+                            <h4>👩‍💻 Alice</h4>
+                            <div class="color-swatch-box">
+                                <span>Μυστικό A:</span>
+                                <div id="dh-swatch-alice-priv" class="swatch"></div>
+                            </div>
+                            <div class="color-swatch-box">
+                                <span>Μίγμα για Bob (g<sup>a</sup> mod p):</span>
+                                <div id="dh-swatch-alice-pub" class="swatch"></div>
+                            </div>
+                            <div class="color-swatch-box highlight">
+                                <span>Τελικό Κοινό Κλειδί:</span>
+                                <div id="dh-swatch-alice-shared" class="swatch big"></div>
+                            </div>
+                        </div>
+
+                        <!-- Channel / Eve -->
+                        <div class="actor-card eve">
+                            <h4>🕵️‍♀️ Δημόσιο Κανάλι (Eve)</h4>
+                            <div class="channel-arrow">➡️ Μεταφορά Μίγματος Alice ➡️</div>
+                            <div class="channel-arrow">⬅️ Μεταφορά Μίγματος Bob ⬅️</div>
+                            <div class="eve-box">
+                                <h5>Τι βλέπει η Eve;</h5>
+                                <p id="dh-eve-info">Βλέπει μόνο το δημόσιο Κίτρινο και τα δύο μεσαία μίγματα. Δεν μπορεί να τα "ξε-αναμίξει"!</p>
+                            </div>
+                        </div>
+
+                        <!-- Bob Side -->
+                        <div class="actor-card bob">
+                            <h4>👨‍💻 Bob</h4>
+                            <div class="color-swatch-box">
+                                <span>Μυστικό B:</span>
+                                <div id="dh-swatch-bob-priv" class="swatch"></div>
+                            </div>
+                            <div class="color-swatch-box">
+                                <span>Μίγμα για Alice (g<sup>b</sup> mod p):</span>
+                                <div id="dh-swatch-bob-pub" class="swatch"></div>
+                            </div>
+                            <div class="color-swatch-box highlight">
+                                <span>Τελικό Κοινό Κλειδί:</span>
+                                <div id="dh-swatch-bob-shared" class="swatch big"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dh-math-results" class="math-results-box">
+                        <!-- Rendered Math Formulas -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: CAESAR CIPHER WHEEL & FREQUENCY ANALYSIS -->
+        <section id="tab-cipher-wheel" class="tab-page">
+            <div class="page-header">
+                <h2>⚙️ 4. Τροχός Caesar & Ανάλυση Συχνότητας</h2>
+                <p>Διαδραστικός τροχός μετατόπισης αλφαβήτου και ζωντανό ιστόγραμμα συχνότητας γραμμάτων για σπάσιμο κρυπτογραφημάτων!</p>
+            </div>
+
+            <div class="content-split">
+                <div class="panel controls-panel">
+                    <h3>🎡 Περιστροφή Τροχού (Shift K)</h3>
+                    <div class="form-group">
+                        <label for="caesar-shift-slider">Μετατόπιση Κλειδιού K = <span id="caesar-key-val" class="highlight-val">3</span>:</label>
+                        <input type="range" id="caesar-shift-slider" min="0" max="23" value="3" class="slider">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="caesar-input">Αρχικό Κείμενο (Plaintext):</label>
+                        <textarea id="caesar-input" class="form-control" rows="3">ΟΛΟΙ ΟΙ ΕΡΕΥΝΗΤΕΣ ΤΟΥ ΙΤΕ ΚΡΥΠΤΟΓΡΑΦΟΥΝ ΤΑ ΜΥΣΤΙΚΑ ΤΟΥΣ</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="caesar-output">Κρυπτογραφημένο Κείμενο (Ciphertext):</label>
+                        <textarea id="caesar-output" class="form-control readonly" rows="3" readonly></textarea>
+                    </div>
+
+                    <div class="btn-group">
+                        <button id="caesar-copy-btn" class="btn btn-secondary">📋 Αντιγραφή Ciphertext</button>
+                        <button id="caesar-solve-btn" class="btn btn-accent">⚡ Αυτόματο Σπάσιμο (Auto-Crack)</button>
+                    </div>
+                    <div id="caesar-feedback" class="feedback-banner success margin-top" style="display:none;"></div>
+                </div>
+
+                <div class="panel display-panel">
+                    <div class="cipher-wheel-visual">
+                        <div class="wheel-container">
+                            <div id="outer-wheel" class="wheel outer">
+                                <!-- Outer Greek Alphabet -->
+                            </div>
+                            <div id="inner-wheel" class="wheel inner">
+                                <!-- Inner Shifted Alphabet -->
+                            </div>
+                            <svg id="wheel-spokes-svg" class="wheel-spokes-svg" viewBox="0 0 340 340"></svg>
+                            <div class="wheel-center">🔑 K=<span id="wheel-k-center">3</span></div>
+                        </div>
+                    </div>
+
+                    <div class="frequency-analysis-wrapper">
+                        <h4>📊 Ιστόγραμμα Συχνότητας Γραμμάτων (Cryptanalysis)</h4>
+                        <div id="freq-chart-container" class="freq-chart-container">
+                            <!-- Dynamic SVG / HTML Bar Chart -->
+                        </div>
+                        <small>Στα Ελληνικά, τα πιο συχνά γράμματα είναι το <strong>Α</strong>, <strong>Ε</strong>, <strong>Ο</strong>.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: ECB MODE VISUAL LEAKAGE DEMO -->
+        <section id="tab-ecb-demo" class="tab-page">
+            <div class="page-header">
+                <h2>🖼️ 5. Οπτική Διαρροή ECB (Electronic Codebook Mode)</h2>
+                <p>Γιατί η κρυπτογράφηση ανεξάρτητων block με το ίδιο κλειδί αποτυγχάνει να κρύψει τα μοτίβα; Δείτε το φαινόμενο "ECB Penguin"!</p>
+            </div>
+
+            <div class="content-split">
+                <div class="panel controls-panel">
+                    <h3>🖼️ Επιλογή Εικόνας Επίδειξης</h3>
+                    <div class="preset-buttons" style="display:flex; flex-wrap:wrap; gap:6px;">
+                        <button class="btn btn-small btn-preset active" data-img="tux">🐧 Tux Penguin</button>
+                        <button class="btn btn-small btn-preset" data-img="spy">🕵️ Secret Spy Badge</button>
+                        <button class="btn btn-small btn-preset" data-img="shapes">Δ Γεωμετρικά Σχήματα</button>
+                    </div>
+
+                    <div class="form-group margin-top">
+                        <label for="ecb-file-input">📁 Ή Ανεβάστε Δική σας Εικόνα (Custom Photo):</label>
+                        <input type="file" id="ecb-file-input" accept="image/*" class="form-control">
+                    </div>
+
+                    <div class="form-group margin-top">
+                        <label for="ecb-key-input">Μυστικό Κλειδί AES-128 (Hex):</label>
+                        <input type="text" id="ecb-key-input" class="form-control" value="A5F039B2" maxlength="16">
+                    </div>
+
+                    <hr class="divider">
+
+                    <h3>🔒 Τρόπος Λειτουργίας (Block Cipher Mode):</h3>
+                    <div class="mode-selectors">
+                        <label class="radio-card">
+                            <input type="radio" name="cipher-mode" value="ecb" checked>
+                            <div class="radio-content">
+                                <strong>ECB Mode (Electronic Codebook)</strong>
+                                <small>Κάθε block κρυπτογραφείται αυτόνομα. Ίδια pixels &rarr; Ίδιο ciphertext!</small>
+                            </div>
+                        </label>
+
+                        <label class="radio-card">
+                            <input type="radio" name="cipher-mode" value="cbc">
+                            <div class="radio-content">
+                                <strong>CBC Mode / True OTP (Recommended)</strong>
+                                <small>Κάθε block εξαρτάται από το προηγούμενο ή από μοναδικό τυχαίο ρεύμα. Πλήρης θόρυβος!</small>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="info-box alert">
+                        ⚠️ <strong>Σημαντικό Δίδαγμα:</strong> Η κρυπτογράφηση δεν αρκεί αν δεν κρύβει τα στατιστικά μοτίβα των δεδομένων!
+                    </div>
+                </div>
+
+                <div class="panel display-panel">
+                    <div class="image-comparison-grid">
+                        <div class="img-box">
+                            <h4>1. Αρχική Εικόνα (Plaintext)</h4>
+                            <canvas id="ecb-canvas-orig" width="200" height="200"></canvas>
+                        </div>
+                        <div class="img-box">
+                            <h4>2. Κρυπτογράφηση ECB (Διαρροή!)</h4>
+                            <canvas id="ecb-canvas-encrypted" width="200" height="200"></canvas>
+                            <span class="badge-tag danger">Μοτίβα Ορατά!</span>
+                        </div>
+                        <div class="img-box">
+                            <h4>3. Ασφαλής Κρυπτογράφηση (CBC/OTP)</h4>
+                            <canvas id="ecb-canvas-secure" width="200" height="200"></canvas>
+                            <span class="badge-tag success">Τέλειος Θόρυβος</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 6: ERROR CORRECTION & HAMMING CODES -->
+        <section id="tab-error-correction" class="tab-page">
+            <div class="page-header">
+                <h2>🛡️ 6. Διόρθωση Σφαλμάτων (Hamming Codes & QR Error Correction)</h2>
+                <p>Πώς τα ψηφιακά δεδομένα επιβιώνουν από θόρυβο, γρατζουνιές και παρεμβολές χωρίς να χάνονται!</p>
+            </div>
+
+            <div class="content-split">
+                <div class="panel controls-panel">
+                    <h3>🔢 Hamming(7,4) Code Simulator</h3>
+                    <p>Στέλνουμε 4 bits δεδομένων (<i>d</i><sub>1</sub>, <i>d</i><sub>2</sub>, <i>d</i><sub>3</sub>, <i>d</i><sub>4</sub>) προσθέτοντας 3 bits ελέγχου (<i>p</i><sub>1</sub>, <i>p</i><sub>2</sub>, <i>p</i><sub>3</sub>).</p>
+                    
+                    <div class="bit-inputs">
+                        <label>4 Bits Δεδομένων:</label>
+                        <div class="bit-toggle-group">
+                            <button class="bit-btn" id="d1" data-bit="0">0</button>
+                            <button class="bit-btn" id="d2" data-bit="1">1</button>
+                            <button class="bit-btn" id="d3" data-bit="0">0</button>
+                            <button class="bit-btn" id="d4" data-bit="1">1</button>
+                        </div>
+                    </div>
+
+                    <button id="hamming-encode-btn" class="btn btn-primary">⚙️ Υπολογισμός Hamming Code (7 Bits)</button>
+                    
+                    <hr class="divider">
+
+                    <h3>⚡ Προσομοίωση Θορύβου Καναλιού</h3>
+                    <p>Κάντε κλικ σε οποιοδήποτε bit παρακάτω για να προκαλέσετε <strong>σφάλμα (Bit Flip)</strong> κατά τη μετάδοση!</p>
+                    
+                    <div id="transmitted-word" class="transmitted-word-box">
+                        <!-- 7 Bits rendered dynamically -->
+                    </div>
+
+                    <button id="hamming-repair-btn" class="btn btn-accent">🛠️ Αυτόματη Διάγνωση & Διόρθωση</button>
+                </div>
+
+                <div class="panel display-panel">
+                    <div class="codebook-table-wrapper">
+                        <h4>📋 Πίνακας Αντιστοίχισης Hamming(7,4) Codebook (16 Λέξεις)</h4>
+                        <div class="table-responsive" style="max-height: 380px; overflow-y: auto; border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 8px; background: rgba(15, 23, 42, 0.6);">
+                            <table id="hamming-codebook-table" class="crypto-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Plaintext (4b)<br><small>d<sub>1</sub>d<sub>2</sub>d<sub>3</sub>d<sub>4</sub></small></th>
+                                        <th>Parity (3b)<br><small>p<sub>1</sub>p<sub>2</sub>p<sub>3</sub></small></th>
+                                        <th>Codeword (7b)<br><small><span style="color:var(--accent-gold);">p<sub>1</sub>p<sub>2</sub></span><span style="color:var(--accent-cyan);">d<sub>1</sub></span><span style="color:var(--accent-gold);">p<sub>3</sub></span><span style="color:var(--accent-cyan);">d<sub>2</sub>d<sub>3</sub>d<sub>4</sub></span></small></th>
+                                        <th>Βάρος</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="hamming-codebook-body">
+                                    <!-- 16 Rows Populated Dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="hamming-syndrome-status" class="syndrome-box">
+                        <!-- Syndrome calculation explanation -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 7: SPY CHALLENGE & PASSPORT -->
+        <section id="tab-spy-challenge" class="tab-page">
+            <div class="page-header">
+                <h2>🕵️ 7. The CryptoLab Spy Challenge (Passport & Certs)</h2>
+                <p>Ολοκληρώστε τις 4 αποστολές του περίπτερου, συλλέξτε τις σφραγίδες και λάβετε το Ψηφιακό Πιστοποιητικό Ερευνητή!</p>
+            </div>
+
+            <div class="content-split">
+                <div class="panel controls-panel">
+                    <h3>📋 Στοιχεία Πράκτορα</h3>
+                    <div class="form-group">
+                        <label for="spy-name-input">Όνομα Επισκέπτη / Πράκτορα:</label>
+                        <input type="text" id="spy-name-input" class="form-control" placeholder="π.χ. Αλέξανδρος" value="Πράκτορας Crypto">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="spy-code-input">Εισαγωγή Κωδικού Αποστολής:</label>
+                        <input type="text" id="spy-code-input" class="form-control" placeholder="Εισάγετε κωδικό π.χ. CRYPTO77">
+                        <button id="spy-claim-btn" class="btn btn-primary margin-top">🎟️ Επαλήθευση Κωδικού</button>
+                    </div>
+
+                    <hr class="divider">
+
+                    <button id="spy-print-cert-btn" class="btn btn-accent full-width">📜 Εκτύπωση / Λήψη PDF (Laptop)</button>
+                    <button id="spy-share-cert-btn" class="btn btn-primary full-width margin-top" style="background: var(--accent-cyan);">📱 Κοινοποίηση στο Κινητό (QR Code)</button>
+                    <button id="spy-reset-progress-btn" class="btn btn-outline full-width margin-top">🔄 Μηδενισμός Προόδου</button>
+                </div>
+
+                <div class="panel display-panel">
+                    <div class="passport-card">
+                        <div class="passport-header">
+                            <div class="emblem">🔐 CRYPTOLAB SPY ACADEMY</div>
+                            <h3>SECRET AGENT PASSPORT</h3>
+                        </div>
+
+                        <div class="missions-grid">
+                            <div class="mission-item" id="mission-1">
+                                <div class="stamp-slot" id="stamp-1">🔒</div>
+                                <div class="mission-info">
+                                    <h5>Αποστολή 1: Οπτικό Μυστικό</h5>
+                                    <p>Ευθυγραμμίστε τις διαφάνειες στο Demo 1</p>
+                                    <button class="btn btn-micro" data-mission="1">Ολοκλήρωση ✓</button>
+                                </div>
+                            </div>
+
+                            <div class="mission-item" id="mission-2">
+                                <div class="stamp-slot" id="stamp-2">🔒</div>
+                                <div class="mission-info">
+                                    <h5>Αποστολή 2: Parity Master</h5>
+                                    <p>Βρείτε το αλλαγμένο bit στο Demo 2</p>
+                                    <button class="btn btn-micro" data-mission="2">Ολοκλήρωση ✓</button>
+                                </div>
+                            </div>
+
+                            <div class="mission-item" id="mission-3">
+                                <div class="stamp-slot" id="stamp-3">🔒</div>
+                                <div class="mission-info">
+                                    <h5>Αποστολή 3: Caesar Shift</h5>
+                                    <p>Αποκρυπτογραφήστε το κείμενο στο Demo 4</p>
+                                    <button class="btn btn-micro" data-mission="3">Ολοκλήρωση ✓</button>
+                                </div>
+                            </div>
+
+                            <div class="mission-item" id="mission-4">
+                                <div class="stamp-slot" id="stamp-4">🔒</div>
+                                <div class="mission-info">
+                                    <h5>Αποστολή 4: Hamming Repair</h5>
+                                    <p>Διορθώστε το ψηφιακό σφάλμα στο Demo 6</p>
+                                    <button class="btn btn-micro" data-mission="4">Ολοκλήρωση ✓</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certificate-preview-box" id="cert-box">
+                            <div class="cert-border">
+                                <h4>📜 ΠΙΣΤΟΠΟΙΗΤΙΚΟ ΕΠΙΤΥΧΙΑΣ</h4>
+                                <p>Πιστοποιείται ότι ο/η <strong id="cert-agent-name">Πράκτορας Crypto</strong> ολοκλήρωσε με επιτυχία όλες τις δοκιμασίες Κρυπτογραφίας & Θεωρίας Κωδίκων στο CryptoLab!</p>
+                                <div class="cert-signatures">
+                                    <span>🔐 CryptoLab Stand 2026</span>
+                                    <span>🛡️ Certificate of Excellence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>🔐 <strong>CryptoLab - Βραδιά Ερευνητή (Researcher's Night)</strong> | Δραστηριότητα Κρυπτογραφίας & Θεωρίας Κωδίκων</p>
+    </footer>
+
+    <!-- Share Modal (QR Code) -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content" style="text-align: center;">
+            <span class="close-modal-btn" id="close-share-modal-btn">&times;</span>
+            <h3>📱 Σάρωση Πιστοποιητικού στο Κινητό</h3>
+            <p>Σκανάρετε το QR code με το κινητό σας για να ανοίξετε και να αποθηκεύσετε το πιστοποιητικό σας!</p>
+            
+            <div id="qrcode-container" style="display: inline-block; background: white; padding: 16px; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></div>
+            
+            <div class="margin-top">
+                <p style="font-size: 0.95rem; color: var(--accent-gold); font-weight: 600;">Πράκτορας: <span id="share-agent-name-display"></span></p>
+            </div>
+
+            <div style="margin-top: 1rem; text-align: left; font-size: 0.8rem; opacity: 0.85;">
+                <label for="share-base-url-input" style="display:block; margin-bottom: 4px; color: var(--text-dim, #94a3b8);">Διεύθυνση (URL) για το QR Code (π.χ. LAN IP ή Public Domain):</label>
+                <input type="text" id="share-base-url-input" class="form-control" style="font-size: 0.8rem; padding: 6px 10px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); color: #fff;" placeholder="http://192.168.1.50:8000">
+            </div>
+            
+            <button id="share-modal-print-btn" class="btn btn-accent full-width margin-top">📜 Αποθήκευση ως PDF / Εκτύπωση</button>
+        </div>
+    </div>
+
+    <!-- QR Code Generator Library -->
+    <script src="qrcode.min.js"></script>
+    <!-- App Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
