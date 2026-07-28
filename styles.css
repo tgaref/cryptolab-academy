@@ -1245,12 +1245,17 @@ canvas {
         background: #f8fafc !important;
         border: 1px solid #cbd5e1 !important;
         color: #1e293b !important;
+        padding: 0.5rem !important;
+        gap: 0.5rem !important;
     }
 
     .stamp-slot {
         background: #f1f5f9 !important;
         border: 2px dashed #94a3b8 !important;
         color: #475569 !important;
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 1.3rem !important;
     }
 
     .stamp-slot.unlocked {
@@ -1267,7 +1272,6 @@ canvas {
         color: #475569 !important;
     }
 
-    /* Certificate Box in print */
     .cert-border {
         border: 3px double #b45309 !important;
         background: #fdfbf7 !important;

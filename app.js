@@ -1393,9 +1393,9 @@ function unlockMission(num) {
     const levelEl = document.getElementById('hub-agent-level');
 
     if (countEl) countEl.textContent = completedMissions.size;
-    if (barEl) barEl.style.width = `${(completedMissions.size / 4) * 100}%`;
+    if (barEl) barEl.style.width = `${(completedMissions.size / 6) * 100}%`;
 
-    if (completedMissions.size === 4 && levelEl) {
+    if (completedMissions.size === 6 && levelEl) {
         levelEl.textContent = 'MASTER CRYPTOGRAPHER 🏆';
         levelEl.style.color = 'var(--accent-gold)';
     }
@@ -1431,7 +1431,7 @@ function initSpyChallenge() {
         claimBtn.addEventListener('click', () => {
             const code = document.getElementById('spy-code-input').value.trim().toUpperCase();
             if (code === 'CRYPTO' || code === 'CRYPTO2026' || code === 'CRYPTOLAB' || code === 'FORTH') {
-                unlockMission(1); unlockMission(2); unlockMission(3); unlockMission(4);
+                unlockMission(1); unlockMission(2); unlockMission(3); unlockMission(4); unlockMission(5); unlockMission(6);
                 alert('🎉 Έγκυρος Κωδικός! Όλες οι αποστολές ξεκλειδώθηκαν!');
             } else {
                 alert('❌ Λανθασμένος κωδικός. Δοκιμάστε "CRYPTO2026"');
@@ -1566,7 +1566,7 @@ function initSpyChallenge() {
     if (resetProgressBtn) {
         resetProgressBtn.addEventListener('click', () => {
             completedMissions.clear();
-            for (let i = 1; i <= 4; i++) {
+            for (let i = 1; i <= 6; i++) {
                 const s = document.getElementById(`stamp-${i}`);
                 if (s) { s.textContent = '🔒'; s.classList.remove('unlocked'); }
             }
